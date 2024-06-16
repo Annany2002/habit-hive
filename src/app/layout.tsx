@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const monte = Montserrat({ subsets: ["latin"], weight: ["100", "200", "300"] });
+const monte = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600"],
+});
 
 export const metadata: Metadata = {
-  title: "HabitHive",
+  title: "Habit-Hive",
   description:
     "A place where all your habits come together, much like bees in a hive working towards a common goal.",
 };

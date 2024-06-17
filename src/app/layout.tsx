@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import GlobalContextProvider from "./context-api";
 
 const monte = Montserrat({
   subsets: ["latin"],
@@ -21,9 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body className={monte.className}>{children}</body>
-      </html>
+      <GlobalContextProvider>
+        <html lang="en">
+          <body className={monte.className}>{children}</body>
+        </html>
+      </GlobalContextProvider>
     </ClerkProvider>
   );
 }

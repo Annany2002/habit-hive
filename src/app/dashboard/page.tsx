@@ -1,14 +1,15 @@
 "use client";
 
-import { SignOutButton, useUser } from "@clerk/nextjs";
+import SideBar from "@/components/SideBar";
+import { useUser } from "@clerk/nextjs";
 
 export default function Dashboard() {
   const { user } = useUser();
 
   return (
-    <div>
-      Hello, {user?.fullName}
-      <SignOutButton>Signout</SignOutButton>
+    <div className="flex">
+      <SideBar />
+      <div>This is a page</div>
     </div>
   );
 }

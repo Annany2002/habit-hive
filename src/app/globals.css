@@ -19,4 +19,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .btn-green {
+    @apply bg-[#47cf76] border-[1.5px] border-green-700 px-5 py-2 rounded-full
+  }
 }

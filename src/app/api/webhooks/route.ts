@@ -63,7 +63,7 @@ export async function POST(req: Request) {
       userEmail: email_addresses[0].email_address,
     };
 
-    console.log(newUser);
+    console.log("New User is: ", newUser);
 
     try {
       await connectToDB();

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useAuth } from "@clerk/nextjs";
-import LogoAndName from "./LogoAndName";
+import LogoAndName from "../LogoAndName";
 
 export default function Navbar() {
   const { userId } = useAuth();

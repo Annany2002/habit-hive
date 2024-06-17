@@ -38,7 +38,7 @@ export default function Dashboard() {
   return (
     <div className="flex">
       <SideBar />
-      <div>{selectedComponent}</div>
+      <div className="w-full">{selectedComponent}</div>
     </div>
   );
 }

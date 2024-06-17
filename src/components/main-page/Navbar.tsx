@@ -9,13 +9,8 @@ export default function Navbar() {
 
   return (
     <header className="bg-[#fffafa] p-[6px]">
-      {/* Main div */}
       <div className="items-center justify-center sm:flex sm:justify-between">
-        {/* Logo and Name */}
-
         <LogoAndName />
-
-        {/* Signup and SignIn */}
 
         {userId ? (
           <Link href={"/dashboard"}>

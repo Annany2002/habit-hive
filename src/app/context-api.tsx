@@ -15,7 +15,7 @@ const GlobalContext = createContext<GlobalContextType>({
 function GlobalContextProvider({ children }: { children: ReactNode }) {
   const [menuItems, setMenuItems] = useState<menuItemType[]>([
     { name: "All habits", isSelected: true, icon: Notepad },
-    { name: "Statistics", isSelected: true, icon: ChartBar },
+    { name: "Statistics", isSelected: false, icon: ChartBar },
     { name: "Areas", isSelected: false, icon: HardDrives },
   ]);
 

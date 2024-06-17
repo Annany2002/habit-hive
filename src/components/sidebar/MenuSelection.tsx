@@ -1,10 +1,10 @@
 import { useGlobalContextProvider } from "@/app/context-api";
 import { menuItemType } from "@/app/types/MenuItemTypes";
-import React from "react";
 
 export default function MenuSelection() {
   const { menuItemsObject } = useGlobalContextProvider();
   const { menuItems } = menuItemsObject;
+
   return (
     <div className="mt-[70px] flex flex-col gap-3 items-center">
       {menuItems.map((menuItem: menuItemType, menuItemIndex: number) => (
@@ -17,10 +17,26 @@ export default function MenuSelection() {
 }
 
 function SingleMenuItem({ menuItemProp }: { menuItemProp: menuItemType }) {
+  const { menuItemsObject } = useGlobalContextProvider();
+  const { menuItems, setMenuItems } = menuItemsObject;
+
+  const handleSetMenu = () => {
+    const MenuItem = menuItems.map((menuItem) => {
+      if (menuItemProp.name === menuItem.name) {
+        return { ...menuItem, isSelected: true };
+      }
+      return { ...menuItem, isSelected: false };
+    });
+    setMenuItems(MenuItem);
+  };
+
   return (
     <div
-      className={`flex font-medium items-center gap-2 p-2 mb-3 cursor-pointer rounded-md w-36 ${
-        menuItemProp.isSelected ? "bg-[#47cf76]" : ""
+      onClick={handleSetMenu}
+      className={`flex font-semibold items-center gap-2 p-2 mb-3 cursor-pointer rounded-md w-36 ${
+        menuItemProp.isSelected
+          ? "bg-[#47cf76]"
+          : "hover:text-[#47cf76] font-bold"
       }`}
     >
       <menuItemProp.icon size={22} />

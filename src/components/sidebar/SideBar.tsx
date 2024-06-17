@@ -1,4 +1,5 @@
 import LogoAndName from "./LogoAndName";
+import LogoutSection from "./LogoutSection";
 import MenuSelection from "./MenuSelection";
 
 export default function SideBar() {
@@ -6,6 +7,7 @@ export default function SideBar() {
     <div className="flex flex-col gap-20 h-screen p-10 border-r-2">
       <LogoAndName />
       <MenuSelection />
+      <LogoutSection />
     </div>
   );
 }

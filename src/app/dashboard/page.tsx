@@ -36,7 +36,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="flex">
+    <div className="flex bg-[#F8F8FF]">
       <SideBar />
       <div className="w-full">{selectedComponent}</div>
     </div>

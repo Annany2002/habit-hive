@@ -8,7 +8,7 @@ export default function Navbar() {
   const { userId } = useAuth();
 
   return (
-    <header className="bg-[#fffafa] p-[6px]">
+    <header className="p-[6px]">
       <div className="items-center justify-center sm:flex sm:justify-between">
         <LogoAndName />
 

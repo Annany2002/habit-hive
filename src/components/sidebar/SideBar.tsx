@@ -4,7 +4,7 @@ import MenuSelection from "./MenuSelection";
 
 export default function SideBar() {
   return (
-    <div className="flex flex-col gap-20 h-screen bg-[#f3f2f2] p-10 border-r-2">
+    <div className="flex flex-col gap-20 h-screen p-10 px-8">
       <LogoAndName />
       <MenuSelection />
       <LogoutSection />

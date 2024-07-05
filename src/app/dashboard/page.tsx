@@ -36,9 +36,23 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="flex bg-[#F8F8FF]">
+    <div className="flex bg-[#F8F8FF] dark:bg-slate-500">
       <SideBar />
       <div className="w-full">{selectedComponent}</div>
+      <OpaqueLayer />
     </div>
+  );
+}
+
+function OpaqueLayer() {
+  const { openSideBarObject } = useGlobalContextProvider();
+  const { openSideBar } = openSideBarObject;
+
+  return (
+    <div
+      className={`w-full h-full bg-black fixed top-0 left-0 opacity-20 z-40 ${
+        openSideBar ? "fixed" : "hidden"
+      }`}
+    />
   );
 }

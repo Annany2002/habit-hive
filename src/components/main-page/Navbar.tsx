@@ -12,20 +12,22 @@ export default function Navbar() {
       <div className="items-center justify-center sm:flex sm:justify-between">
         <LogoAndName />
 
-        {userId ? (
-          <Link href={"/dashboard"}>
-            <button className="btn-green">Dashboard</button>
-          </Link>
-        ) : (
-          <div className="text-[18px] justify-center font-bold flex gap-4 p-2 sm:justify-evenly">
-            <Link href={"/sign-in"}>
-              <button className="btn-green">Sign In</button>
+        <div className="text-[18px] justify-center font-bold flex gap-4 p-2 sm:justify-evenly">
+          {userId ? (
+            <Link href={"/dashboard"}>
+              <button className="btn-green">Dashboard</button>
             </Link>
-            <Link href={"/sign-up"}>
-              <button className="btn-green">Sign Up</button>
-            </Link>
-          </div>
-        )}
+          ) : (
+            <>
+              <Link href={"/sign-in"}>
+                <button className="btn-green">Sign In</button>
+              </Link>
+              <Link href={"/sign-up"}>
+                <button className="btn-green">Sign Up</button>
+              </Link>
+            </>
+          )}
+        </div>
       </div>
     </header>
   );

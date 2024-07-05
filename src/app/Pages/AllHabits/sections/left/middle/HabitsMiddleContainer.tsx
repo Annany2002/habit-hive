@@ -16,13 +16,13 @@ export default function HabitsMiddleContainer() {
             </div>
           </div>
           <div className="flex gap-2 mt-2">
-            <div className="bg-green-300/40">
+            <div className="bg-green-300/40 px-1">
               <span className="text-[#47cf76]">Area1</span>
             </div>
-            <div className="bg-green-300/40">
+            <div className="bg-green-300/40 px-1">
               <span className="text-[#47cf76]">Area2</span>
             </div>
-            <div className="bg-green-300/40">
+            <div className="bg-green-300/40 px-1">
               <span className="text-[#47cf76]">Area3</span>
             </div>
           </div>

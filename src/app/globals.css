@@ -75,3 +75,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .btn-green {
+    @apply bg-[#47cf76] text-white px-3 font-medium py-1 rounded-full border border-black
+  }
+}

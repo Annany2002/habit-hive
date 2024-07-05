@@ -1,5 +1,4 @@
 import IconLogo from "@/SVG/IconLogo";
-import React from "react";
 
 export default function LogoAndName() {
   return (

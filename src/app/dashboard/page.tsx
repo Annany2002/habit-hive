@@ -7,10 +7,13 @@ import { menuItemType } from "../types/MenuItemTypes";
 import AllHabits from "../Pages/AllHabits/AllHabits";
 import Statistics from "../Pages/Statistics/Statistics";
 import Areas from "../Pages/Areas/Areas";
+import { color } from "@/color";
 
 export default function Dashboard() {
-  const { menuItemsObject } = useGlobalContextProvider();
+  const { menuItemsObject, darkModeObject } = useGlobalContextProvider();
   const { menuItems } = menuItemsObject;
+  const { isDarkMode } = darkModeObject;
+
   const [selectedMenu, setSelectedMenu] = useState<menuItemType | null>(null);
 
   let selectedComponent = null;
@@ -36,7 +39,12 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="flex bg-[#F8F8FF] dark:bg-slate-500">
+    <div
+      style={{
+        backgroundColor: isDarkMode ? color.myGrey : "",
+      }}
+      className="flex bg-[#F8F8FF]"
+    >
       <SideBar />
       <div className="w-full">{selectedComponent}</div>
       <OpaqueLayer />

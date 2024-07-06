@@ -3,6 +3,7 @@ import LogoAndName from "./LogoAndName";
 import LogoutSection from "./LogoutSection";
 import MenuSelection from "./MenuSelection";
 import { useEffect, useRef } from "react";
+import { color } from "@/color";
 
 export default function SideBar() {
   const { openSideBarObject, darkModeObject } = useGlobalContextProvider();
@@ -29,7 +30,7 @@ export default function SideBar() {
   return (
     <div
       style={{
-        backgroundColor: isDarkMode ? "#1B1B1B" : "white",
+        backgroundColor: isDarkMode ? color.myBlack : "white",
         color: isDarkMode ? "white" : "",
       }}
       ref={sideBarRef}

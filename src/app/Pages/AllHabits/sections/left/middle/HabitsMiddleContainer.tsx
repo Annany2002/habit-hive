@@ -1,11 +1,24 @@
+import { useGlobalContextProvider } from "@/app/context-api";
+import { color } from "@/color";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Bookmark, DotsThreeCircle } from "@phosphor-icons/react";
 import React from "react";
 
 export default function HabitsMiddleContainer() {
+  const { darkModeObject } = useGlobalContextProvider();
+  const { isDarkMode } = darkModeObject;
+
   return (
-    <div className="flex gap-2 p-2 items-center justify-between border">
-      <Checkbox />
+    <div
+      style={{
+        backgroundColor: isDarkMode ? color.myGrey : "",
+      }}
+      className="flex gap-2 p-2 items-center rounded-md justify-between border"
+    >
+      <Checkbox
+        className="rounded-full"
+        style={{ backgroundColor: isDarkMode ? color.myBlack : "" }}
+      />
 
       <div className="flex justify-between w-full gap-2 rounded-md p-2 py-3">
         <div className="w-full">
@@ -17,13 +30,25 @@ export default function HabitsMiddleContainer() {
           </div>
           <div className="flex gap-2 mt-2">
             <div className="bg-green-300/40 px-1">
-              <span className="text-[#47cf76]">Area1</span>
+              <span
+                className={`${isDarkMode ? "text-white" : "text-[#47cf76]"}`}
+              >
+                Area1
+              </span>
             </div>
             <div className="bg-green-300/40 px-1">
-              <span className="text-[#47cf76]">Area2</span>
+              <span
+                className={`${isDarkMode ? "text-white" : "text-[#47cf76]"}`}
+              >
+                Area2
+              </span>
             </div>
             <div className="bg-green-300/40 px-1">
-              <span className="text-[#47cf76]">Area3</span>
+              <span
+                className={`${isDarkMode ? "text-white" : "text-[#47cf76]"}`}
+              >
+                Area3
+              </span>
             </div>
           </div>
         </div>

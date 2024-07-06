@@ -4,9 +4,13 @@ import DarkMode from "./DarkMode";
 import { List } from "@phosphor-icons/react";
 import { useGlobalContextProvider } from "@/app/context-api";
 import { useEffect } from "react";
+import { is } from "date-fns/locale";
+import { color } from "@/color";
 
 export default function TopBar() {
   const { user } = useUser();
+  const { darkModeObject } = useGlobalContextProvider();
+  const { isDarkMode } = darkModeObject;
 
   const { openSideBarObject } = useGlobalContextProvider();
   const { openSideBar, setOpenSideBar } = openSideBarObject;
@@ -28,7 +32,13 @@ export default function TopBar() {
   }, []);
 
   return (
-    <div className="lg:flex gap-2 justify-between items-center rounded-md mt-5 p-5 bg-white dark:bg-slate-700">
+    <div
+      style={{
+        color: isDarkMode ? "white" : "black",
+        backgroundColor: isDarkMode ? color.myBlack : "white",
+      }}
+      className="lg:flex gap-2 justify-between items-center rounded-md py-3 px-5 bg-white transition-all"
+    >
       <div className="flex-col flex p-2">
         <span className="text-xl">
           <span className="font-bold">Welcome Back, </span>

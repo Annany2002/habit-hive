@@ -1,4 +1,5 @@
 import { useGlobalContextProvider } from "@/app/context-api";
+import { color } from "@/color";
 import { Sun, Moon } from "@phosphor-icons/react";
 import React, { useEffect, useState } from "react";
 
@@ -27,9 +28,14 @@ export default function DarkMode() {
       }
     });
   }, [darkModeItems, setDarkMode]);
-  console.log(darkModeItems);
+
   return (
-    <div className="flex bg-slate-100/80 w-[90px] relative rounded-3xl">
+    <div
+      style={{
+        backgroundColor: isDarkMode ? color.myGrey : "",
+      }}
+      className="flex bg-slate-100/80 w-[90px] relative rounded-3xl"
+    >
       {darkModeItems.map((item, index) => (
         <div
           key={index}
@@ -37,19 +43,33 @@ export default function DarkMode() {
           className="h-full w-[45px] z-40 flex justify-center items-center"
         >
           {item.id === 1 ? (
-            <Sun
-              className={`${
-                item.isSelected ? "text-myGreen" : "text-gray-300"
-              }`}
-              size={20}
-            />
+            <div
+              style={{
+                backgroundColor: isDarkMode ? "" : "white",
+              }}
+              className="rounded-full p-[6px]"
+            >
+              <Sun
+                className={`${
+                  item.isSelected ? "text-myGreen" : "text-gray-300"
+                }`}
+                size={20}
+                weight={`${isDarkMode ? "regular" : "fill"}`}
+              />
+            </div>
           ) : (
-            <Moon
-              className={`${
-                item.isSelected ? "text-myGreen" : "text-gray-300"
-              }`}
-              size={20}
-            />
+            <div
+              style={{
+                backgroundColor: isDarkMode ? color.myBlack : "",
+              }}
+              className="rounded-full p-[6px]"
+            >
+              <Moon
+                className={`${item.isSelected ? "text-myGreen" : "text-black"}`}
+                size={20}
+                weight={`${isDarkMode ? "fill" : "regular"}`}
+              />
+            </div>
           )}
         </div>
       ))}

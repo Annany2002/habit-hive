@@ -1,13 +1,24 @@
+import { useGlobalContextProvider } from "@/app/context-api";
+import { color } from "@/color";
 import { Cell, Pie, PieChart } from "recharts";
 
 export default function MainStatistics() {
+  const { darkModeObject } = useGlobalContextProvider();
+  const { isDarkMode } = darkModeObject;
+
   const stats = [
     { id: 1, num: 7, subTitle: "Best Streaks" },
     { id: 2, num: 10, subTitle: "Perfect Days" },
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center mt-7 bg-slate-50 rounded-xl p-3 gap-4">
+    <div
+      style={{
+        color: isDarkMode ? "white" : "",
+        backgroundColor: isDarkMode ? color.myGrey : "",
+      }}
+      className="flex flex-col items-center justify-center mt-4 xl:mt-7 bg-slate-50 rounded-xl p-3 gap-4"
+    >
       <span className="font-bold text-xl cursor-pointer hover:text-myGreen">
         Statistics
       </span>
@@ -26,7 +37,11 @@ export default function MainStatistics() {
             <div className="w-2 h-2 bg-myGreen rounded-full" />
             <div className="text-[12px]">
               <span className="flex flex-col font-bold">{item.num}</span>
-              <span className="text-gray-400">{item.subTitle}</span>
+              <span
+                className={`${isDarkMode ? "text-white" : "text-gray-400"}`}
+              >
+                {item.subTitle}
+              </span>
             </div>
           </div>
         ))}

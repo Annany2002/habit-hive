@@ -17,7 +17,7 @@ export default function MainStatistics() {
         color: isDarkMode ? "white" : "",
         backgroundColor: isDarkMode ? color.myGrey : "",
       }}
-      className="flex flex-col items-center justify-center mt-4 xl:mt-7 bg-slate-50 rounded-xl p-3 gap-4"
+      className="flex flex-col max-w-64 items-center justify-center mt-4 xl:mt-7 bg-slate-50 rounded-xl p-3 gap-4"
     >
       <span className="font-bold text-xl cursor-pointer hover:text-myGreen">
         Statistics

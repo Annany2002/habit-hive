@@ -30,13 +30,14 @@ export default function HabitsCompleted() {
 function HabitCard() {
   const { darkModeObject } = useGlobalContextProvider();
   const { isDarkMode } = darkModeObject;
+
   return (
     <div
       style={{
         color: isDarkMode ? "white" : "",
-        backgroundColor: isDarkMode ? color.myGrey : "",
+        backgroundColor: isDarkMode ? color.myGrey : color.myWhite,
       }}
-      className="flex gap-2 p-2 items-center justify-between border transition-all rounded-md"
+      className="flex gap-2 p-2 items-center justify-between transition-all rounded-md"
     >
       <Checkbox
         style={{ backgroundColor: isDarkMode ? color.myBlack : "" }}

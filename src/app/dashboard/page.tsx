@@ -41,9 +41,9 @@ export default function Dashboard() {
   return (
     <div
       style={{
-        backgroundColor: isDarkMode ? color.myGrey : "",
+        backgroundColor: isDarkMode ? color.myGrey : color.myWhite,
       }}
-      className="flex bg-[#F8F8FF]"
+      className="flex"
     >
       <SideBar />
       <div className="w-full">{selectedComponent}</div>

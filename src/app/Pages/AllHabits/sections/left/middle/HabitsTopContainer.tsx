@@ -1,7 +1,10 @@
+import { useGlobalContextProvider } from "@/app/context-api";
 import { ArrowCircleLeft, ArrowCircleRight, Plus } from "@phosphor-icons/react";
-import React from "react";
 
 export default function HabitsTopContainer() {
+  const { habitWindowObject } = useGlobalContextProvider();
+  const { setOpenHabitWindow } = habitWindowObject;
+
   return (
     <div className="flex p-3 items-center justify-between">
       <div className="flex gap-4 items-center">
@@ -19,7 +22,10 @@ export default function HabitsTopContainer() {
           </div>
         </div>
       </div>
-      <button className="flex gap-2 p-3 font-medium items-center rounded-md text-sm bg-[#47cf76]">
+      <button
+        onClick={() => setOpenHabitWindow(true)}
+        className="flex gap-2 p-3 font-medium items-center rounded-md text-sm bg-[#47cf76]"
+      >
         <Plus weight="bold" />
         <span>New Habit</span>
       </button>

@@ -47,7 +47,7 @@ export default function DarkMode() {
               style={{
                 backgroundColor: isDarkMode ? "" : "white",
               }}
-              className="rounded-full p-[6px]"
+              className="rounded-full p-[6px] cursor-pointer"
             >
               <Sun
                 className={`${
@@ -62,7 +62,7 @@ export default function DarkMode() {
               style={{
                 backgroundColor: isDarkMode ? color.myBlack : "",
               }}
-              className="rounded-full p-[6px]"
+              className="rounded-full p-[6px] cursor-pointer"
             >
               <Moon
                 className={`${item.isSelected ? "text-myGreen" : "text-black"}`}

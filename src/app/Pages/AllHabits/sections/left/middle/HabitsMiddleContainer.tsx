@@ -11,9 +11,9 @@ export default function HabitsMiddleContainer() {
   return (
     <div
       style={{
-        backgroundColor: isDarkMode ? color.myGrey : "",
+        backgroundColor: isDarkMode ? color.myGrey : color.myWhite,
       }}
-      className="flex gap-2 p-2 items-center rounded-md justify-between border"
+      className="flex gap-2 p-2 items-center rounded-md justify-between"
     >
       <Checkbox
         className="rounded-full"

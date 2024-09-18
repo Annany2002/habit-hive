@@ -17,4 +17,8 @@ export type GlobalContextType = {
     darkModeItems: DarkModeItem[];
     setDarkModeItems: Dispatch<SetStateAction<DarkModeItem[]>>;
   };
+  habitWindowObject: {
+    openHabitWindow: boolean;
+    setOpenHabitWindow: Dispatch<SetStateAction<boolean>>;
+  };
 };

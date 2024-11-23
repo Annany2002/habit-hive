@@ -30,7 +30,7 @@ type IconItem = {
 };
 
 export const IconsData: IconItem[] = [
-  { Icon: Flask, isSelected: true },
+  { Icon: Flask, isSelected: false },
   { Icon: Calculator, isSelected: false },
   { Icon: Globe, isSelected: false },
   { Icon: Book, isSelected: false },

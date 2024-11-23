@@ -11,7 +11,7 @@ export default function HeroSection() {
         unleash the power of routine with our intuitive interface, designed to
         help you build a healthier, more productive life.
       </p>
-      <button className="text-[#f1f3f4] font-bold bg-[#47cf76] border-[1.5px] border-green-700 px-8 py-4 rounded-full focus:outline-none">
+      <button className="text-[#f1f3f4] text-md font-bold bg-[#47cf76] border-[1.5px] border-green-700 mt-4 px-4 py-2 rounded-full focus:outline-none">
         Let&apos;s get started
       </button>
     </div>

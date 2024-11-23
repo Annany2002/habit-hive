@@ -18,6 +18,26 @@ export default function IconWindow({
   const { darkModeObject } = useGlobalContextProvider();
   const { isDarkMode } = darkModeObject;
 
+  const changeIcon = (idx: number) => {
+    setAllIcons((prevAllIcons) => {
+      const updatedIcons = prevAllIcons.map((icon, i) => {
+        return {
+          ...icon,
+          isSelected:
+            i === idx
+              ? true
+              : SelectedIcon !== undefined
+              ? false
+              : icon.isSelected,
+        };
+      });
+
+      return updatedIcons;
+    });
+    setSelectedIcon(allIcons[idx].Icon);
+    setOpenIconWindow(false);
+  };
+
   return (
     <div
       style={{
@@ -41,13 +61,12 @@ export default function IconWindow({
         {allIcons.map(({ Icon, isSelected }, _) => (
           <div
             key={_}
-            className={`border border-gray-300 rounded-md text-xl cursor-pointer p-2 hover:border-[#47cf76] hover:text-[#47cf76] ${
-              isSelected ? "text-[#47cf76] border-[#47cf76]" : ""
+            className={`border rounded-md text-xl cursor-pointer p-2 hover:border-[#47cf76] hover:text-[#47cf76] ${
+              isSelected
+                ? "text-[#47cf76] border-[#47cf76] hover"
+                : "border-gray-300"
             }`}
-            onClick={() => {
-              setSelectedIcon(Icon);
-              setOpenIconWindow(false);
-            }}
+            onClick={() => changeIcon(_)}
           >
             <Icon />
           </div>
